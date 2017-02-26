@@ -1,6 +1,8 @@
 body {
-	background-image: url(../img/old420.jpg) no-repeat center;
+	background-image: url(../img/old420.jpg);
 	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
 	-webkit-background-size: contain;
 	-moz-background-size: contain;
 	-o-background-size: contain;
