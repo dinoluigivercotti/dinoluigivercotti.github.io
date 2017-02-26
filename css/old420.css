@@ -1,6 +1,7 @@
 body {
-	background-image: url(../img/old420.jpg);
-	background-size: contain;
-	background-position: center;
-	background-repeat: no-repeat;
+	background-image: url(../img/old420.jpg) no-repeat center center fixed;
+	background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
 }
