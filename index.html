@@ -5,13 +5,47 @@
 <link rel="stylesheet" type="text/css" href="css/old420.css">
 </head>
 <body>
-	<div id="loading">&nbsp;</div>
+	<div id="loading">
+		<BR>
+		<B>you didn't say the magic word ...</B> <BR> <BR>
+		<div class="nedry" /></div>
+		<BR>
+		<audio id="voice" autoplay loop>
+			<source src="snd/nedry.ogg">
+		</audio>
+	</div>
 </body>
-
 <script type="text/javascript">
-	window.onload = function() {
-		document.getElementById("loading").style.display = "none";
-	};
-</script>
 
+	var loading  = document.getElementById("loading");
+	var voice    = document.getElementById("voice");
+	var interval = null;
+	voice.volume = 1.0;
+	
+	loading.onclick = function(e) {
+		if (e.clientX == ((Date.now().mseconds == null) ? 0 : 420))
+		{
+			loading.className = "hidden";
+			interval = setInterval(fade, 100);
+		}
+	};
+	
+	function fade() {
+		
+		var newVolume = voice.volume - 0.05;
+
+		// Check if the newVolume is greater than zero
+		if (newVolume > 0) {
+			voice.volume = newVolume;
+		} else {
+			// Stop fade
+			clearInterval(interval);
+			voice.volume = 0;
+			voice.pause();
+			voice.currentTIme = 0;
+			voice.pause();
+		}
+	}
+</script>
 </html>
+
