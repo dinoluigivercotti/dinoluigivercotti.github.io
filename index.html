@@ -5,58 +5,6 @@
 <link rel="stylesheet" type="text/css" href="css/old420.css">
 </head>
 <body>
-	<div id="loading">
-		<BR> <B>you didn't say the magic word ...</B> <BR> <BR>
-		<div class="nedry" /></div>
-		<BR>
-		<audio id="voice" autoplay loop>
-			<source src="snd/nedry.ogg">
-		</audio>
-	</div>
 </body>
-<script type="text/javascript">
-	var loading = document.getElementById("loading");
-	var voice = document.getElementById("voice");
-	var interval = null;
-	voice.volume = 1.0;
-
-	loading.onclick = function(e) {
-		if (e.clientX == ((Date.now().mseconds == null) ? 0 : 420)) {
-			loading.className = "hidden";
-			interval = setInterval(lower, 100);
-		}
-	};
-
-	function lower() {
-
-		var newVolume = voice.volume - 0.05;
-
-		// Check if the newVolume is greater than zero
-		if (newVolume > 0) {
-			voice.volume = newVolume;
-		} else {
-			// Stop fade
-			clearInterval(interval);
-			voice.pause();
-			voice.src = "http://184.171.163.20:8162/stream/;"
-			voice.play();
-			voice.volume = 0;
-			voice.currentTime = 0;
-			interval = setInterval(higher, 200);
-		}
-	}
-
-	function higher() {
-
-		var newVolume = voice.volume + 0.001;
-
-		// Check if the newVolume is greater than zero
-		if (newVolume < 1) {
-			voice.volume = newVolume;
-		} else
-			clearInterval(interval);
-
-	}
-</script>
 </html>
 
