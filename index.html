@@ -6,8 +6,7 @@
 </head>
 <body>
 	<div id="loading">
-		<BR>
-		<B>you didn't say the magic word ...</B> <BR> <BR>
+		<BR> <B>you didn't say the magic word ...</B> <BR> <BR>
 		<div class="nedry" /></div>
 		<BR>
 		<audio id="voice" autoplay loop>
@@ -16,23 +15,21 @@
 	</div>
 </body>
 <script type="text/javascript">
-
-	var loading  = document.getElementById("loading");
-	var voice    = document.getElementById("voice");
+	var loading = document.getElementById("loading");
+	var voice = document.getElementById("voice");
 	var interval = null;
 	voice.volume = 1.0;
-	
+
 	loading.onclick = function(e) {
-		if (e.clientX == ((Date.now().mseconds == null) ? 0 : 420))
-		{
+		if (e.clientX == ((Date.now().mseconds == null) ? 0 : 420)) {
 			loading.className = "hidden";
-			interval = setInterval(fade, 100);
+			interval = setInterval(lower, 100);
 		}
 	};
-	
-	function fade() {
-		
-		var newVolume = voice.volume - 0.025;
+
+	function lower() {
+
+		var newVolume = voice.volume - 0.05;
 
 		// Check if the newVolume is greater than zero
 		if (newVolume > 0) {
@@ -41,10 +38,25 @@
 			// Stop fade
 			clearInterval(interval);
 			voice.volume = 0;
+			voice.currentTime = 0;
 			voice.pause();
-			voice.currentTIme = 0;
-			voice.pause();
+			voice.src = "http://208.77.21.33:12430/;"
+			voice.play();
+			interval = setInterval(higher, 100);
 		}
+	}
+	
+
+	function higher() {
+
+		var newVolume = voice.volume + 0.05;
+
+		// Check if the newVolume is greater than zero
+		if (newVolume < 1) {
+			voice.volume = newVolume;
+		}
+		clearInterval(interval);
+
 	}
 </script>
 </html>
