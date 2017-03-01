@@ -12,7 +12,7 @@ body {
 		1px  1px  3px  rgba(0, 0, 0, .5), 
 		3px  3px  5px  rgba(0, 0, 0, .3);
 	background-image: url(../img/old420.jpg);
-	background-size: auto;
+	background-size: 60%;
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-attachment: fixed;

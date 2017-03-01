@@ -37,25 +37,24 @@
 		} else {
 			// Stop fade
 			clearInterval(interval);
-			voice.volume = 0;
-			voice.currentTime = 0;
 			voice.pause();
 			voice.src = "http://184.171.163.20:8162/stream/;"
 			voice.play();
-			interval = setInterval(higher, 100);
+			voice.volume = 0;
+			voice.currentTime = 0;
+			interval = setInterval(higher, 200);
 		}
 	}
-	
 
 	function higher() {
 
-		var newVolume = voice.volume + 0.05;
+		var newVolume = voice.volume + 0.001;
 
 		// Check if the newVolume is greater than zero
 		if (newVolume < 1) {
 			voice.volume = newVolume;
-		}
-		clearInterval(interval);
+		} else
+			clearInterval(interval);
 
 	}
 </script>
