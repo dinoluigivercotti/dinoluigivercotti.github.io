@@ -5,14 +5,43 @@
 <link rel="stylesheet" type="text/css" href="css/old420.css">
 </head>
 <body>
-<video id="bgvid" playsinline autoplay muted loop>
-    <source src="vid/old420.webm" type="video/webm">
-    <source src="vid/old420.mp4" type="video/mp4">
-</video>
-<div id="hello">
-    <div id="mini">
-    </div>
-</div>
+	<video id="bgvid" playsinline autoplay muted loop>
+		<source src="vid/old420.webm" type="video/webm">
+		<source src="vid/old420.mp4" type="video/mp4">
+	</video>
+	<div id="hello">
+		<div id="mini"></div>
+	</div>
+	<audio id="song"  autoplay loop>
+		<source src="snd/old420.ogg" type="audio/ogg">
+	</audio>
+	<script>
+document.getElementById("mini").addEventListener("click", play);
+
+var playing = false;
+
+var song = document.getElementById("song");
+
+song.pause();
+song.currentTime = 0;
+
+function play()
+{
+	if (!playing)
+	{
+		song.play();
+		playing = true;
+	}
+	else
+	{
+		song.pause();
+		song.currentTime = 0;
+		playing = false;
+	}
+	
+}
+
+</script>
 </body>
 </html>
 
