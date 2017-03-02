@@ -6,19 +6,13 @@ body {
 
 #main {
     position: fixed;
-    top: 40%;
-    left: 50%;
-    min-width: 77%;
-    min-height: 77%;
-    width: auto;
-    height: auto;
+    margin: 10% 10%;
+	padding: 0;
+    width: 75%;
+    height: 75%;
     z-index: -100;
-    -ms-transform: translateX(-50%) translateY(-50%);
-    -moz-transform: translateX(-50%) translateY(-50%);
-    -webkit-transform: translateX(-50%) translateY(-50%);
-    transform: translateX(-50%) translateY(-50%);
     background: url(../img/old420.gif) no-repeat;
-    background-size: cover; 
+    background-size: 80%; 
 }
 
 video#bgvid { 
@@ -34,6 +28,4 @@ video#bgvid {
     -moz-transform: translateX(-50%) translateY(-50%);
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
-    background: url(../img/old420.gif) no-repeat;
-    background-size: cover; 
 }
