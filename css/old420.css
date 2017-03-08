@@ -13,17 +13,11 @@ body {
 	z-index: 100;
 }
 
-#hello:before {
-	content: '';
-	display: inline-block;
-	height: 100%;
-	vertical-align: middle;
-	z-index: 100;
-}
+
 
 #mini {
-	height: 80%;
-	width: 80%;
+	height: 100%;
+	width: 90%;
 	background-color: #FFFFFF;
 	display: inline-block;
 	vertical-align: middle;
